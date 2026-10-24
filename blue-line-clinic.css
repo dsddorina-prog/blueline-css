@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap');
+
+/* ==========================================================
+   Blue Line Clinic – egyedi megjelenés a booked4.us foglalóhoz
+   Beállítás: Beállítások / Ügyféloldali kinézet / Stílus (CSS)
+   Választott megjelenés: Egyedi → Egyedi CSS link: ennek a
+   fájlnak a https-es címe.
+   ========================================================== */
+
+/* ---------- 1. Márkaszínek és betűtípus (CSS-változók) ---------- */
+:root {
+  /* Betűtípus: törzsszöveg, menük, gombok */
+  --font-family: "Karla", "Helvetica Neue", Arial, sans-serif;
+
+  /* Hátterek */
+  --site-bg-color: #F0F2F4;          /* Világos háttér */
+  --container-bg-color: #FFFFFF;     /* Fehér */
+  --steps-bg-color: #FFFFFF;
+  --form-widget-color: #FFFFFF;
+  --placeholder-light-color: #F0F2F4;
+  --placeholder-dark-color: #E0E6EB;
+  --neutral-bg-color: rgba(224, 230, 235, 0.45);
+
+  /* Szövegek */
+  --dark-text-color: #1F2733;        /* Szövegszín */
+  --light-text-color: #636F7E;       /* Másodlagos szöveg */
+
+  /* Fő márkaszín: Navy */
+  --primary-select-color: #1A2D51;
+  --primary-button-bg-color: #1A2D51;
+  --primary-button-bg-hover-color: #0E2545;
+  --primary-button-text-color: #FFFFFF;
+
+  /* Kiegészítő szín: Bronz */
+  --secondary-select-color: #C8A97E; /* Bronz világos árnyalat (hover) */
+  --active-green-color: #A57C4A;     /* Kész lépések jelölése: Bronz */
+  --inactive-grey-color: #C2C2C2;    /* Sötétebb ezüst */
+
+  /* Keretek, elválasztók */
+  --spacer-grey-color: #E0E6EB;      /* Finom keretek */
+  --form-widget-border-color: #E0E6EB;
+  --form-widget-border-hover-color: #C2C2C2;
+  --box-shadow-color: rgba(26, 45, 81, 0.06);
+}
+
+body {
+  color: #1F2733;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 2. Címek: Cormorant Garamond ---------- */
+h1, h2, h3,
+.header__title,
+.header__title-link,
+.contact-info__title,
+.section__sub-heading,
+.calendar-item__name,
+.service-item__name,
+.popup-body__title,
+.confirmation__header,
+.reservation-confirm__subtitle,
+.reservation-end__subtitle,
+.fc .fc-toolbar-title {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  letter-spacing: 0.01em;
+}
+
+.calendar-item__name,
+.service-item__name {
+  color: #1A2D51;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.3rem;
+}
+
+.contact-info__title,
+.section__sub-heading,
+.popup-body__title,
+.confirmation__header {
+  color: #1A2D51;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+}
+
+/* Bronz elválasztó a szekciócímek alatt */
+.section__sub-heading {
+  border-bottom: 0.1rem solid #A2804E;
+}
+
+/* ---------- 3. Fejléc és lábléc ---------- */
+.header {
+  background-color: #EEF0F2;
+  border-bottom: 0.1rem solid #A2804E;
+  box-shadow: none;
+}
+
+.header__title,
+.header__title-link {
+  color: #1A2D51;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.header__link {
+  font-weight: 500;
+}
+
+.header__link:hover,
+.header__button:hover {
+  color: #88613A;
+}
+
+.footer {
+  background-color: #EEF0F2;
+  border-top: 0.1rem solid #A2804E;
+  box-shadow: none;
+}
+
+.footer__logo,
+.footer__logo path {
+  color: #636F7E;
+  fill: #636F7E;
+}
+
+/* ---------- 4. Borítókép és logódoboz ---------- */
+.hero-section__background {
+  border-color: #E0E6EB;
+}
+
+.hero-section__details--has-background {
+  border-color: #E0E6EB;
+  box-shadow: 0 0.4rem 1.6rem rgba(26, 45, 81, 0.08);
+}
+
+/* ---------- 5. Gombok ---------- */
+.button {
+  border-radius: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.button--primary:hover {
+  background-color: #0E2545;
+}
+
+.button--secondary {
+  border-color: #1A2D51;
+  color: #1A2D51;
+}
+
+.button--secondary:hover {
+  background-color: #FAF6EF;           /* Halvány bronz */
+  border-color: #88613A;
+  color: #88613A;
+}
+
+/* ---------- 6. Linkek, ikonok ---------- */
+.link:hover,
+.modify-reservation__link:hover {
+  color: #88613A;
+}
+
+.contact__icon {
+  color: #A57C4A;
+}
+
+/* ---------- 7. Lépések (foglalási folyamat) ---------- */
+.step-number__title {
+  font-weight: 600;
+}
+
+/* ---------- 8. Listák: naptárak, szolgáltatások ---------- */
+.calendar-item__first-free-slot-value {
+  color: #88613A;
+  font-weight: 600;
+}
+
+/* ---------- 9. Dátum- és időpontválasztás ---------- */
+.day--button:not(.day--disabled):not(.day--checked):hover .day__date {
+  background: #EEE3D3;                 /* Világos bronz */
+  color: #1A2D51;
+}
+
+.pocket--checked {
+  background: #FAF6EF;
+  border-color: #1A2D51;
+}
+
+.chip__label--selected {
+  border-color: #1A2D51;
+}
+
+/* react-datepicker kiemelések (alapból kék) */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected,
+.react-datepicker__month--selected,
+.react-datepicker__month--in-range,
+.react-datepicker__close-icon::after {
+  background-color: #1A2D51;
+  color: #FFFFFF;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover,
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover,
+.react-datepicker__month--selected:hover,
+.react-datepicker__month-text--keyboard-selected:hover {
+  background-color: #0E2545;
+}
+
+/* Lapozó nyilak (alapból türkiz SVG-kép) – navy, hoverre bronz */
+.react-datepicker__navigation,
+.fc-toolbar-chunk:nth-child(2) .fc-next-button,
+.fc-toolbar-chunk:nth-child(2) .fc-prev-button {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='-10 -10 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%231A2D51'%3E%3Cpolyline transform='translate(65 50) scale(0.4 0.4)' fill='none' points='-50,50 0,0 -50,-50' stroke-width='13' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cy='50' cx='50' r='50' fill='none' stroke-width='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.react-datepicker__navigation:hover,
+.fc-toolbar-chunk:nth-child(2) .fc-next-button:hover,
+.fc-toolbar-chunk:nth-child(2) .fc-prev-button:hover {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='-10 -10 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23A57C4A'%3E%3Cpolyline transform='translate(65 50) scale(0.4 0.4)' fill='none' points='-50,50 0,0 -50,-50' stroke-width='13' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cy='50' cx='50' r='50' fill='none' stroke-width='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Órarendes / eseménynaptár (FullCalendar) */
+.fc {
+  --fc-button-bg-color: #1A2D51;
+  --fc-button-border-color: #1A2D51;
+  --fc-button-hover-bg-color: #0E2545;
+  --fc-button-hover-border-color: #0E2545;
+  --fc-button-active-bg-color: #88613A;
+  --fc-button-active-border-color: #88613A;
+  --fc-event-bg-color: #1A2D51;
+  --fc-event-border-color: #1A2D51;
+  --fc-today-bg-color: #FAF6EF;
+  --fc-highlight-color: rgba(165, 124, 74, 0.15);
+  --fc-border-color: #E0E6EB;
+}
+
+.fc .fc-toolbar-title {
+  color: #1A2D51;
+  font-weight: 600;
+}
+
+/* Görgetősáv */
+.rcs-custom-scroll .rcs-inner-handle {
+  background-color: rgba(165, 124, 74, 0.6);
+}
+
+/* ---------- 10. Űrlapmezők ---------- */
+.text-input__input:focus {
+  border-color: #1A2D51;
+  box-shadow: 0 0 0 0.2rem rgba(26, 45, 81, 0.15);
+}
+
+/* ---------- 11. Billentyűzetes fókusz (akadálymentesség) ---------- */
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible,
+.link:focus-visible {
+  outline: 0.2rem solid #A57C4A;
+  outline-offset: 0.2rem;
+}
+
+/* ---------- 12. Süti-sáv ---------- */
+.cookie-consent {
+  border-top: 0.1rem solid #A2804E;
+}
